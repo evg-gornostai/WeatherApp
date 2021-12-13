@@ -83,7 +83,7 @@
             android:layout_marginEnd="8dp"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="@+id/main_weather_condition_icon"
-            app:layout_constraintEnd_toStartOf="@+id/imageView"
+            app:layout_constraintEnd_toStartOf="@+id/main_weather_image"
             app:layout_constraintStart_toEndOf="@+id/main_weather_condition_icon"
             app:layout_constraintTop_toTopOf="@+id/main_weather_condition_icon"
             tools:text="Clear sky" />
@@ -96,7 +96,7 @@
             android:textSize="98sp"
 
             app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
-            app:layout_constraintEnd_toStartOf="@+id/imageView"
+            app:layout_constraintEnd_toStartOf="@+id/main_weather_image"
             app:layout_constraintStart_toStartOf="parent"
             tools:text="25\u00B0" />
 
