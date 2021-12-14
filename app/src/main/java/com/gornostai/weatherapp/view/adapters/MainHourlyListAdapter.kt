@@ -1,25 +1,24 @@
 package com.gornostai.weatherapp.view.adapters
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.RecyclerView
 import com.gornostai.weatherapp.R
+import com.gornostai.weatherapp.business.model.HourlyWeatheModel
+import com.gornostai.weatherapp.databinding.ItemMainHourlyBinding
 
-class MainHourlyListAdapter : RecyclerView.Adapter<MainHourlyListAdapter.HourlyViewHolder>() {
+class MainHourlyListAdapter : BaseAdapter<HourlyWeatheModel>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HourlyViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_main_hourly,parent,false)
-        return HourlyViewHolder(view)
-    }
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HourlyViewHolder =
+        HourlyViewHolder(ItemMainHourlyBinding
+            .inflate(LayoutInflater.from(parent.context),parent,false))
 
-    override fun onBindViewHolder(holder: HourlyViewHolder, position: Int) {
-
-    }
-
-    override fun getItemCount(): Int = 10
-
-    inner class HourlyViewHolder(view: View) : RecyclerView.ViewHolder(view){
+    inner class HourlyViewHolder(val binding: ItemMainHourlyBinding) : BaseViewHolder(binding.root){
+        override fun bindView(position: Int) {
+            binding.itemHourlyTimeTv.text = "14:00"
+            binding.itemHourlyPopTv.text = "11%"
+            binding.itemHourlyTempTv.text = "22°"
+            binding.itemHourlyWeatherConditionIcon.setImageResource(R.drawable.ic_sun)
+        }
 
     }
 

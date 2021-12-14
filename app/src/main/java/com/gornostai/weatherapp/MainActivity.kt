@@ -3,22 +3,27 @@ package com.gornostai.weatherapp
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.gornostai.weatherapp.databinding.ActivityMainBinding
 import com.gornostai.weatherapp.view.adapters.MainDailyListAdapter
 import com.gornostai.weatherapp.view.adapters.MainHourlyListAdapter
-import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+
+    lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        main_hourly_list.apply {
+
+        binding.mainHourlyList.apply {
             adapter = MainHourlyListAdapter()
             layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
             setHasFixedSize(true)
         }
 
-        main_daily_list.apply {
+        binding.mainDailyList.apply {
             adapter = MainDailyListAdapter()
             layoutManager = LinearLayoutManager(context,LinearLayoutManager.VERTICAL,false)
             setHasFixedSize(true)
@@ -29,19 +34,19 @@ class MainActivity : AppCompatActivity() {
 
 
 
-        main_city_name_tv.text = "Polotsk"
-        main_date_tv.text = "31 january"
-        main_temp.text = "25\u00B0"
-        main_weather_condition_description.text = "Clear sky"
-        main_temp_min_tv.text = "11"
-        main_temp_avg_tv.text = "17"
-        main_temp_max_tv.text = "31"
-        main_pressure_mu_tv.text = "1024 hPa"
-        main_humidity_mu_tv.text = "30%"
-        main_wind_speed_mu_tv.text = "2 m/s"
-        main_sunrise_mu_tv.text = "5:55"
-        main_sunset_mu_tv.text = "22:34"
-        main_weather_condition_icon.setImageResource(R.drawable.ic_sun)
-        main_weather_image.setImageResource(R.mipmap.cloud3x)
+        binding.mainCityNameTv.text = "Polotsk"
+        binding.mainDateTv.text = "31 january"
+        binding.mainTemp.text = "25\u00B0"
+        binding.mainWeatherConditionDescription.text = "Clear sky"
+        binding.mainTempMinTv.text = "11"
+        binding.mainTempAvgTv.text = "17"
+        binding.mainTempMaxTv.text = "31"
+        binding.mainPressureMuTv.text = "1024 hPa"
+        binding.mainHumidityMuTv.text = "30%"
+        binding.mainWindSpeedMuTv.text = "2 m/s"
+        binding.mainSunriseMuTv.text = "5:55"
+        binding.mainSunsetMuTv.text = "22:34"
+        binding.mainWeatherConditionIcon.setImageResource(R.drawable.ic_sun)
+        binding.mainWeatherImage.setImageResource(R.mipmap.cloud3x)
     }
 }

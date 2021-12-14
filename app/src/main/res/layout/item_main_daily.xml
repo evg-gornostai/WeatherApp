@@ -2,7 +2,8 @@
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -16,7 +17,7 @@
             android:id="@+id/item_daily_date_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="31 january"
+            tools:text="31 january"
             android:textSize="17sp"
             app:layout_constraintBaseline_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -37,7 +38,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
-            android:text="23%"
+            tools:text="23%"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@id/item_daily_weather_condition_icon"
             app:layout_constraintTop_toTopOf="parent" />
@@ -48,7 +49,7 @@
             android:layout_height="wrap_content"
             android:gravity="end"
             android:includeFontPadding="false"
-            android:text="12\u00B0"
+            tools:text="12\u00B0"
             android:textSize="17sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -70,7 +71,7 @@
             android:layout_marginEnd="18dp"
             android:gravity="end"
             android:includeFontPadding="false"
-            android:text="25\u00B0"
+            tools:text="25\u00B0"
             android:textSize="17sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/item_daily_divider"
